@@ -42,6 +42,10 @@ public class Usuarios implements Serializable {
     
     
     /* --- Construtores --- */
+    
+    public Usuarios () {
+    	
+    }
 
     public Usuarios(Integer idUsuarios, String cpfUsuarios, String nomeUsuarios, String emailUsuarios, String senhaUsuarios,   Set<Integer> perfis) {
         this.idUsuarios = idUsuarios;

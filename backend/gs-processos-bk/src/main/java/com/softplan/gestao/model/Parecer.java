@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -20,10 +22,14 @@ public class Parecer implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idParecer;
 
+    @NotEmpty (message = "O texto do parecer é de preenchimento obrigatório")
+    @Size (min=5, max=2000,  message = "O texto do parecer deve ter entre 5 e 2000 caracteres")
     private String textoParecer;
 
+    @NotEmpty (message = "O status do parecer é de preenchimento obrigatório")
     private String statusParecer;
 
+    @NotEmpty (message = "A data de cadastro do parecer é de preenchimento obrigatório")
     private Date dtCadastroParecer;
     
     @JsonIgnore

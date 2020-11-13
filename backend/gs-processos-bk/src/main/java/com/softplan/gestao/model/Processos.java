@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -23,12 +25,19 @@ public class Processos implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idProcessos;
 
+    @NotEmpty (message = "O número do processo é de preenchimento obrigatório")
+    @Size (min=5, max=200,  message = "O numero do processo deve ter entre 5 e 200 caracteres")
     private String numeroProcessos;
 
+    @NotEmpty (message = "O título do processo é de preenchimento obrigatório")
+    @Size (min=5, max=200,  message = "O título do processo deve ter entre 5 e 200 caracteres")
     private String tituloProcessos;
 
+    @NotEmpty (message = "O texto do processo é de preenchimento obrigatório")
+    @Size (min=5, max=2000,  message = "O texto do processo deve ter entre 5 e 2000 caracteres")
     private String textoProcessos;
 
+    @NotEmpty (message = "A data de cadastro do processo é de preenchimento obrigatório")
     private Date dtCadastroProcessos;
     
     @JsonIgnore

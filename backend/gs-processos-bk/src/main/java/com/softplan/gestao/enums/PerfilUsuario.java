@@ -3,7 +3,8 @@ package com.softplan.gestao.enums;
 public enum PerfilUsuario {
 
     ADMIN(1, "ROLE_ADMIN"),
-    ATENDENTE(2, "ROLE_ATENDENTE");
+    TRIADOR(2, "ROLE_TRIADOR"),
+    FINALIZADOR(3, "ROLE_FINALIZADOR");
 
     private Integer cod;
     private String nome;

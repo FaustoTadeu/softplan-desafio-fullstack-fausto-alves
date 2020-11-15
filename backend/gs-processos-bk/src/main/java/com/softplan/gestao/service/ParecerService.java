@@ -4,7 +4,11 @@ import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.softplan.gestao.dto.ParecerAtribuirDTO;
+import com.softplan.gestao.dto.ProcessosNewDTO;
 import com.softplan.gestao.model.Parecer;
+import com.softplan.gestao.model.Processos;
 import com.softplan.gestao.repository.ParecerRepository;
 import com.softplan.gestao.service.exception.ObjectNotFoundException;
 
@@ -36,14 +40,10 @@ public class ParecerService {
 	public Parecer inserirEditarParecer(Parecer parecer) {
         return parecerRepository.save(parecer);
     }
-
-    public Boolean alterarStatusParecer(Parecer parecer, String checked) {
-        try{
-        	parecer.setStatusParecer(checked);
-            parecerRepository.save(parecer);
-        } catch (Exception e) {
-            return false;
-        }
-        return true;
+	
+	public Parecer fromParecerAtributoDTO (ParecerAtribuirDTO parecerAtributoDto) {
+        Parecer parecer = new Parecer (parecerAtributoDto.getIdUsuario(), parecerAtributoDto.getIdProcesso());
+        return parecer;
     }
+	
 }

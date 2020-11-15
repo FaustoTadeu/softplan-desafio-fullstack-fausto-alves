@@ -9,7 +9,7 @@
     <div class="item item-2" fxFlex="75%">
         <div class="selectUsuarios" fxFlex="100%">
             <mat-form-field class="selectUsuarios">
-                <mat-select placeholder="Usuários" [formControl]="posicao" style="width: 100% !important;" matTooltip="Selecione um usuário">
+                <mat-select placeholder="Usuários" [formControl]="usuarioSelecionado" style="width: 100% !important;" matTooltip="Selecione um usuário">
                     <mat-option *ngFor="let usuario of usuarios" [value]="usuario.idUsuarios">
                         {{usuario.idUsuarios}}  - {{usuario.nomeUsuarios}}
                     </mat-option>
@@ -17,13 +17,13 @@
             </mat-form-field>
         </div>
         <div class="usuariosAtribuidosTabela" fxFlex="98%">
-            <p>Lista de Usuários atribuídos ao Processo</p>
+            <p>Usuários atribuídos ao Processo</p>
             <br/>
         </div>
     </div>
 </div>
 <br />
 <div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">Salvar</button>
+    <button mat-button (click)="atribuirParecer()">Salvar</button>
     <button mat-button (click)="onNoClick()">Fechar</button>
 </div>

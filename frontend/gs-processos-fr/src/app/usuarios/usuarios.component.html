@@ -11,14 +11,14 @@
                         <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
                             <div fxFlex="100%">
                                 <mat-form-field>
-                                    <input matInput [placeholder]="titleCpf" [formControl]="cpfUsuarios" [mask]="cpfMask" maxlength="18" [readonly]="editar" >
+                                    <input matInput placeholder="CPF" [formControl]="cpfUsuarios" mask="000.000.000-00" maxlength="18" [readonly]="editar" >
                                 </mat-form-field>
                             </div>
                         </div>
                         <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
                             <div fxFlex="100%">
                                 <mat-form-field>
-                                    <input matInput [placeholder]="titleNomeRazao" [formControl]="nomeUsuarios" maxlength="100">
+                                    <input matInput placeholder="Nome" [formControl]="nomeUsuarios" maxlength="100">
                                 </mat-form-field>
                             </div>
                         </div>

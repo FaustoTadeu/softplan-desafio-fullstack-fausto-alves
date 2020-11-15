@@ -29,7 +29,7 @@ public interface UsuariosRepository extends JpaRepository<Usuarios, Integer> {
     public Usuarios findByCpfUsuariosAndStatusUsuarios(String cpfUsuarios, String statusUsuarios);
 
     @Transactional(readOnly = true)
-    @Query("SELECT u FROM usuarios u WHERE u.statusUsuarios <> 'E' ORDER BY u.dataCadastro DESC")
+    @Query("SELECT u FROM usuarios u WHERE u.statusUsuarios <> 'E' ORDER BY u.nomeUsuarios")
     public List<Usuarios> getListaUsuarios();
 
 }

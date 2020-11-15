@@ -40,7 +40,6 @@ export class AuthService {
     }
 
     logout () {
-        console.log('saiu');
        this.storageService.setLocalStorage(null);
        localStorage.clear();
     }

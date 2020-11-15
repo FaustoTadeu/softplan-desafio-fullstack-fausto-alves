@@ -37,6 +37,11 @@ export class TableProcessosComponent implements OnInit {
         this.reloadPage();
     }
 
+    @Input()
+    set novoParecer(novoProcesso: number) {
+        this.reloadPage();
+    }
+
     @ViewChild(MatSort) sort: MatSort;
     ngOnInit() {
         this.processosService.pesquisarListaProcessos().subscribe(response => {
@@ -114,8 +119,10 @@ export class TableProcessosComponent implements OnInit {
                    idProcessos: idProcessso,
                    numeroProcessos: numeroProcesso,
                    tituloProcessos: tituloProcesso,
-                   listaUsuarios: response
+                   usuariosProcessos: response
                   }
+        }).afterClosed().subscribe( () => {
+           this.reloadPage();
         });
        }
 

@@ -4,7 +4,6 @@ import { DialogDTO } from 'src/models/dialog.dto';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-    selector: 'app-dialog-overview',
     templateUrl: './dialog-overview.component.html',
     styleUrls: ['./dialog-overview.component.scss']
 })

@@ -13,6 +13,6 @@ public interface ProcessosRepository extends JpaRepository<Processos, Integer> {
 
 	
 	@Transactional(readOnly = true)
-	 @Query("SELECT p FROM processos p ORDER BY p.dtCadastroProcessos DESC")
+	 @Query("SELECT p FROM processos p WHERE p.statusProcessos <> 'E' ORDER BY p.dtCadastroProcessos DESC")
 	 public List<Processos> getListaProcessos();
 }

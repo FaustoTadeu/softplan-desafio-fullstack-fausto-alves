@@ -68,9 +68,12 @@ public class UsuariosService {
         if(user.hasRole(PerfilUsuario.ADMIN)) {
             perfil.setCodPerfil(PerfilUsuario.ADMIN.getCod());
             perfil.setNomePerfil(PerfilUsuario.ADMIN.getNome());
+        } else if (user.hasRole(PerfilUsuario.TRIADOR)){
+            perfil.setCodPerfil(PerfilUsuario.TRIADOR.getCod());
+            perfil.setNomePerfil(PerfilUsuario.TRIADOR.getNome());
         } else {
-            perfil.setCodPerfil(PerfilUsuario.ATENDENTE.getCod());
-            perfil.setNomePerfil(PerfilUsuario.ATENDENTE.getNome());
+        	perfil.setCodPerfil(PerfilUsuario.FINALIZADOR.getCod());
+            perfil.setNomePerfil(PerfilUsuario.FINALIZADOR.getNome());
         }
         return perfil;
     }

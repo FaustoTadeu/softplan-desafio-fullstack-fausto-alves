@@ -1,0 +1,54 @@
+<mat-tab-group animationDuration="400ms">
+        <mat-tab label="Gestão de Processos">
+            <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+                <div class="processo" fxFlex="25%">
+                    <div class="processoForm" fxFlex="90%">
+                        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+                            <div fxFlex="100%">    
+                                <p>Cadastrar/Editar Processo</p>
+                            </div>
+                        </div> 
+                        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+                            <div fxFlex="100%">
+                                <mat-form-field>
+                                    <input matInput placeholder="Número" [formControl]="numeroProcessos" mask="0000.00.00.00000-0" maxlength="20" [readonly]="editar" >
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+                            <div fxFlex="100%">
+                                <mat-form-field>
+                                    <input matInput placeholder="Título" [formControl]="tituloProcessos" maxlength="100">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+                           <div class="textArea" fxFlex="100%">
+                            <mat-form-field>
+                                <textarea class="textArea" matInput matTooltip="Tamanho máximo 2000 caracteres" placeholder="Texto" maxlength="2000" [formControl]="textoProcessos" cdkTextareaAutosize cdkAutosizeMaxRows="5" ></textarea>
+                            </mat-form-field>
+                        </div>
+                        </div>
+                        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+                            <div class="buttonSalvarProcesso" fxFlex="100%">
+                                <button mat-stroked-button color="primary" (click)="inserirEditarProcessos()">Salvar</button> &nbsp; &nbsp;
+                                <button mat-stroked-button color="primary" (click)="limparFormulario()">Limpar</button>
+                            </div>
+                        </div>
+                        <br />
+                    </div>    
+                </div>
+                <div class="processo" fxFlex="75%">
+                    <div class="processoTabela" fxFlex="98%">
+                        <p>Lista de Processos</p>
+                        <br />
+                        <app-table-processos [novoProcesso]="nvProcesso" (change)="povoarFormulario($event)"></app-table-processos>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <!-- <mat-tab label="Second">Content 2</mat-tab>
+        <mat-tab label="Third">Content 3</mat-tab> -->
+    </mat-tab-group>
+    
+      

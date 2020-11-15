@@ -1,0 +1,29 @@
+<div class="text-center">
+    <img id="logo" src="/assets/images/softplan.png" style="max-width: 180px;" />
+    <br />
+    <h2 class="text-center"><b>Atribuir Usuário ao Processo</b></h2>
+    <h4 class="text-left">Número: {{data.numeroProcessos}}</h4>
+    <h4 class="text-left">Título: {{data.tituloProcessos}}</h4>
+</div>
+<div mat-dialog-content>
+    <div class="item item-2" fxFlex="75%">
+        <div class="selectUsuarios" fxFlex="100%">
+            <mat-form-field class="selectUsuarios">
+                <mat-select placeholder="Usuários" [formControl]="posicao" style="width: 100% !important;" matTooltip="Selecione um usuário">
+                    <mat-option *ngFor="let usuario of usuarios" [value]="usuario.idUsuarios">
+                        {{usuario.idUsuarios}}  - {{usuario.nomeUsuarios}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="usuariosAtribuidosTabela" fxFlex="98%">
+            <p>Lista de Usuários atribuídos ao Processo</p>
+            <br/>
+        </div>
+    </div>
+</div>
+<br />
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Salvar</button>
+    <button mat-button (click)="onNoClick()">Fechar</button>
+</div>

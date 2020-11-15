@@ -1,0 +1,47 @@
+.usuario {
+    background-color:hsla(234, 100%, 62%, 0.63);
+    text-align: center;
+    border-color: hsl(234, 100%, 60%);
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px;
+    margin-top: 10px; 
+}
+
+.usuarioForm {
+    background-color: white;
+    color: gray;
+    text-align: center;
+    border-color: white;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px;
+    margin: 5%;
+}
+
+::ng-deep .mat-form-field{
+    background-color: white;
+    color:black;
+    padding: 2px;
+}
+
+.buttonSalvarUsuario {
+   width: 70px!important;
+   height: 30px!important;
+   font-size: 12px;
+   padding: 10%;
+   margin-bottom: 10px;
+}
+
+.usuariosTabela {
+    background-color: white;
+    color: gray;
+    text-align: center;
+    border-color: white;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px;
+    margin: 2%;
+    max-height: 410px;
+}
+

@@ -20,7 +20,8 @@ public class UsuariosListDTO implements Serializable {
     private Integer perfil;
 
     private String statusUsuarios;
-
+    
+    
     public UsuariosListDTO() {
     }
 

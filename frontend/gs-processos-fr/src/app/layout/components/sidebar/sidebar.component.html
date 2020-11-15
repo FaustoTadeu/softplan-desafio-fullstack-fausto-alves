@@ -1,0 +1,12 @@
+<div id="sidebar">
+    <mat-nav-list>
+        <ng-container *ngIf="codPerfil === 1">
+            <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/usuarios']">
+                <mat-icon class="sidenav-icon">account_box</mat-icon> {{ 'Usuários' | translate }}
+            </a>
+        </ng-container>
+        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/processos']">
+            <mat-icon class="sidenav-icon">description</mat-icon> {{ 'Processos' | translate }}
+        </a>
+    </mat-nav-list>
+</div>

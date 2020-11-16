@@ -1,0 +1,15 @@
+<mat-tab-group animationDuration="400ms">
+    <mat-tab label="Gestão de Pareceres">
+        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+            <div class="parecer" fxFlex="100%">
+                <div class="parecerTabela" fxFlex="98%">
+                    <p>Lista de Pareceres</p>
+                    <br />
+                    <app-table-parecer [novoParecer]="nvUsuario" (change)="povoarFormulario($event)"></app-table-parecer>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+    
+      

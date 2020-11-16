@@ -1,0 +1,22 @@
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+::ng-deep .mat-form-field {
+    background-color: white;
+    color:black;
+    padding: 2px;
+    width: 100%;;
+    font-size: 12px;
+}
+
+.radioButton {
+    font-size: 12px;
+}
+.dialogContent {
+    min-height: 140px;
+}

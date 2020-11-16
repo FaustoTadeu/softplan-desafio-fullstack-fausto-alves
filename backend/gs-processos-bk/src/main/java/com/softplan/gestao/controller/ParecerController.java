@@ -1,12 +1,13 @@
 package com.softplan.gestao.controller;
 
 import java.util.Date;
-
+import java.util.List;
 import javax.validation.Valid;
-
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.softplan.gestao.dto.ParecerAtribuirDTO;
 import com.softplan.gestao.dto.ParecerListDTO;
 import com.softplan.gestao.model.Parecer;
+import com.softplan.gestao.security.UserSS;
 import com.softplan.gestao.service.ParecerService;
 import com.softplan.gestao.service.ProcessosService;
+import com.softplan.gestao.service.UserService;
 import com.softplan.gestao.service.UsuariosService;
 
 @RestController
@@ -41,9 +44,19 @@ public class ParecerController {
 	    Parecer parecer = parecerService.fromParecerAtributoDTO(parecerAtributoDto);
 	    parecer.setDtCadastroParecer(new Date());
 	    parecer = parecerService.inserirEditarParecer(parecer);
-	    retorno.setUsuarioParecer(usuariosService.buscarUsuariosPorId(parecer.getUsuario().getIdUsuarios()));
-	    retorno.setProcessoParecer(processosService.buscarProcessoPorId(parecer.getProcesso().getIdProcessos()));
+	    retorno.setNomeUsuario(usuariosService.buscarUsuariosPorId(parecer.getUsuario().getIdUsuarios()).getNomeUsuarios());
+	    retorno.setNumeroProcesso(processosService.buscarProcessoPorId(parecer.getProcesso().getIdProcessos()).getNumeroProcessos());
 	    return ResponseEntity.ok().body(retorno);
 	 }
+	
+	@Transactional
+   // @PreAuthorize("hasAnyRole('ADMIN')")
+    @RequestMapping(method = RequestMethod.GET)
+    public ResponseEntity<List<ParecerListDTO>> buscarTodosPareceresPorUsuarioLogado () {
+		UserSS user = UserService.authenticated();
+        List<Parecer> listaParecer = parecerService.buscarParecerPorIdUsuario(user.getId());
+        List<ParecerListDTO> listaParecetDTO = parecerService.fromParecer(listaParecer);
+        return ResponseEntity.ok().body(listaParecetDTO);
+    }
 
 }

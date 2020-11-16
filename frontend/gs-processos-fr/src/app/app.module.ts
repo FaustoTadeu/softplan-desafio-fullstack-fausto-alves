@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule, MatIconModule, MatListModule, MatSidenavModule,
          MatToolbarModule, MatTabsModule, MatFormFieldModule, MatDialogModule,
          MatSortModule, MatCardModule, MatGridListModule,
-         MatSelectModule, MatOptionModule, MatRadioModule } from '@angular/material';
+         MatSelectModule, MatOptionModule, MatRadioModule, MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,6 +25,7 @@ import { HttpErrorInterceptor } from 'src/interceptors/error.interceptor';
 import {NgxMaskModule, IConfig} from 'ngx-mask';
 import { DialogOverviewComponent } from './dialog-overview/dialog-overview.component';
 import { DialogAtribuicoesComponent } from './dialog-atribuicoes/dialog-atribuicoes.component';
+import { DialogParecerComponent } from './dialog-parecer/dialog-parecer.component';
 
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
@@ -35,7 +36,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 
 @NgModule({
-    declarations: [AppComponent, DialogOverviewComponent, DialogAtribuicoesComponent],
+    declarations: [AppComponent, DialogOverviewComponent, DialogAtribuicoesComponent, DialogParecerComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -59,6 +60,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
         MatSelectModule,
         MatOptionModule,
         MatRadioModule,
+        MatInputModule,
         MatSlideToggleModule,
         NgxMaskModule.forRoot(options),
         TranslateModule.forRoot({
@@ -86,6 +88,6 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
                 },
                 DatePipe
             ],
-    bootstrap: [AppComponent, DialogOverviewComponent, DialogAtribuicoesComponent]
+    bootstrap: [AppComponent, DialogOverviewComponent, DialogAtribuicoesComponent, DialogParecerComponent]
 })
 export class AppModule {}

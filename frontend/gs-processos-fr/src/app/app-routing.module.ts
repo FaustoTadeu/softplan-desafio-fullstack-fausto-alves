@@ -16,9 +16,13 @@ const routes: Routes = [
         path: 'usuarios',
         loadChildren: './usuarios/usuarios.module#UsuariosModule'
     },
-     {
+    {
         path: 'processos',
         loadChildren: './processos/processos.module#ProcessosModule'
+    },
+    {
+        path: 'parecer',
+        loadChildren: './parecer/parecer.module#ParecerModule'
     }
 ];
 

@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProcessosRoutingModule } from './processos.routing.module';
-import { ProcessosComponent } from './processos.component';
+import { ParecerRoutingModule } from './parecer.routing.module';
+import { ParecerComponent } from './parecer.component';
 import { MatFormFieldModule, MatSelectModule, MatOptionModule, MatTabsModule,
          MatButtonModule, MatInputModule, MatTableModule, MatIconModule,
          MatRadioModule, MatSlideToggleModule } from '@angular/material';
 import { FormsModule } from '../layout/forms/forms.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TableParecerComponent } from '../tableparecer/tableparecer.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxMaskModule } from 'ngx-mask';
-import { TableProcessosComponent } from '../tableprocessos/tableprocessos.component';
 
 @NgModule({
     imports: [CommonModule,
-               ProcessosRoutingModule,
+               ParecerRoutingModule,
                MatFormFieldModule,
                MatSelectModule,
                MatOptionModule,
@@ -27,8 +27,8 @@ import { TableProcessosComponent } from '../tableprocessos/tableprocessos.compon
                FlexLayoutModule,
                MatRadioModule,
                MatSlideToggleModule,
-               NgxMaskModule
+               NgxMaskModule,
              ],
-    declarations: [ProcessosComponent, TableProcessosComponent]
+    declarations: [ParecerComponent, TableParecerComponent]
 })
-export class ProcessosModule {}
+export class ParecerModule {}

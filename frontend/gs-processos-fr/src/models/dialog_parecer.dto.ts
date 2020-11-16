@@ -1,9 +1,8 @@
-export class ParecerDTO {
+export class DialogParecerDTO {
     idParecer: number;
     numeroProcesso: string;
     tituloProcesso: string;
-    nomeUsuario: string;
+    textoProcesso: string;
     textoParecer: string;
     decisaoParecer: string;
-    dataParecer: string;
 }

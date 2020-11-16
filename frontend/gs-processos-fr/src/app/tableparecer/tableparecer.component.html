@@ -1,0 +1,56 @@
+<div class="container table-parecer-container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+        <div class="" fxFlex="100%">
+            <mat-table mat-table-parecer [dataSource]="dataSource" matSort >
+                
+                <!-- Name Column -->
+                <ng-container matColumnDef="numeroProcesso" >
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Número  </th>
+                    <td mat-cell *matCellDef="let row" (click)="visualizarParecer(row)" class="pointer" > {{row.numeroProcesso}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                 <ng-container matColumnDef="tituloProcesso">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Título  </th>
+                    <td mat-cell *matCellDef="let row" (click)="visualizarParecer(row)" class="pointer" > {{row.tituloProcesso}} </td>
+                </ng-container>
+                
+                <!-- Progress Column -->
+                <ng-container matColumnDef="nomeUsuario">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Responsável  </th>
+                    <td mat-cell *matCellDef="let row" (click)="visualizarParecer(row)" class="pointer"> {{row.nomeUsuario}} </td>
+                </ng-container>
+
+                 <!-- Name Column -->
+                 <ng-container matColumnDef="textoParecer">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Parecer </th>
+                    <td mat-cell *matCellDef="let row" (click)="visualizarParecer(row)" class="pointer"> {{row.textoParecer}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="dataParecer">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Data </th>
+                    <td mat-cell *matCellDef="let row" (click)="visualizarParecer(row)" class="pointer"> {{ row.dataParecer }} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="decisaoParecer">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Decisão </th>
+                    <td mat-cell *matCellDef="let row" (click)="visualizarParecer(row)" class="pointer"> {{ row.decisaoParecer == 'F' ? 'Favorável' :  row.decisaoParecer == 'D ' ? 'Desfavorável': 'Não Avaliado'}} </td>
+                </ng-container>
+                
+
+                <!-- Color Column -->
+                <ng-container matColumnDef="atInParecer">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let row" > 
+                        <button mat-icon-button title="Cadastrar Parecer" color="warn" (click)="cadastrarParecer(row.idParecer, row.numeroProcesso, row.tituloProcesso, row.textoParecer, row.decisaoParecer )">
+                            <mat-icon >list_alt</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true" ></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </mat-table>
+        </div>
+    </div>

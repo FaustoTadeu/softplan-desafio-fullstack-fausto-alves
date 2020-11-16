@@ -19,6 +19,10 @@ const routes: Routes = [
             {
                 path: 'processos',
                 loadChildren: './../processos/processos.module#ProcessosModule'
+            },
+            {
+                path: 'parecer',
+                loadChildren: './../parecer/parecer.module#ParecerModule'
             }
         ]
     }

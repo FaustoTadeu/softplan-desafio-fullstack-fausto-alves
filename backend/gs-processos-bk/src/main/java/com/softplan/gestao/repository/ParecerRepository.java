@@ -15,5 +15,9 @@ public interface ParecerRepository extends JpaRepository<Parecer, Integer> {
 	
 	 @Transactional(readOnly = true)
 	 @Query("SELECT p FROM parecer p ORDER BY p.dtCadastroParecer DESC")
-	 public List<Parecer> getListaParecer();
+	 public List<Parecer> buscarListaParecer();
+	 
+	 @Transactional(readOnly = true)
+	 @Query("SELECT p FROM parecer p WHERE p.usuario.idUsuarios = :idUsuario ORDER BY p.dtCadastroParecer DESC")
+	 public List<Parecer> buscarListaParecerPorUsuario(Integer idUsuario);
 }

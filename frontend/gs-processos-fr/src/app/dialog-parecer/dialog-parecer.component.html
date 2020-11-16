@@ -1,0 +1,29 @@
+<div class="text-center">
+    <img id="logo" src="/assets/images/softplan.png" style="max-width: 150px;" />
+    <h3 class="text-center"><b>Atribuir Parecer ao Processo</b></h3>
+    <h5 class="text-left">Número: {{numeroProcesso.value}}</h5>
+    <h5 class="text-left">Título: {{tituloProcesso.value}}</h5>
+</div>
+<div mat-dialog-content class="dialogContent">
+    <div class="item item-2" fxFlex="100%">
+        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+            <div class="textArea">
+                <mat-form-field>
+                    <textarea class="textArea" matInput matTooltip="Tamanho máximo 2000 caracteres" placeholder="Parecer" maxlength="2000" [formControl]="textoParecer" cdkTextareaAutosize cdkAutosizeMaxRows="5" ></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="container text-center" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+            <div class="radioButton" fxFlex="100%">
+                <mat-radio-group aria-label="Selecione uma opção">
+                    <mat-radio-button value="F">Favorável</mat-radio-button>&nbsp;&nbsp;&nbsp;
+                    <mat-radio-button value="D">Desfavorável</mat-radio-button>
+                  </mat-radio-group>
+            </div>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="cadastrarParecer()">Salvar</button>
+    <button mat-button (click)="onNoClick()">Fechar</button>
+</div>

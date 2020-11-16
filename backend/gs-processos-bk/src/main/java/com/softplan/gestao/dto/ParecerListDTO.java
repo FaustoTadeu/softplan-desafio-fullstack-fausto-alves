@@ -2,8 +2,6 @@ package com.softplan.gestao.dto;
 
 import java.io.Serializable;
 import java.util.Date;
-import com.softplan.gestao.model.Processos;
-import com.softplan.gestao.model.Usuarios;
 
 public class ParecerListDTO implements Serializable {
 
@@ -11,15 +9,17 @@ public class ParecerListDTO implements Serializable {
 
     private Integer idParecer;
 
+    private String numeroProcesso;
+
+    private String tituloProcesso;
+
+    private String nomeUsuario;
+    
     private String textoParecer;
-
+    
     private String decisaoParecer;
-
+    
     private Date dataParecer;
-    
-    private Usuarios usuarioParecer;
-    
-    private Processos processoParecer;
 
 	
     public ParecerListDTO() {
@@ -27,15 +27,15 @@ public class ParecerListDTO implements Serializable {
 	}
 
 
-	public ParecerListDTO(Integer idParecer, String textoParecer, String decisaoParecer, Date dataParecer,
-			Usuarios usuarioParecer, Processos processoParecer) {
+	public ParecerListDTO(Integer idParecer, String numeroProcesso, String tituloProcesso, String nomeUsuario,
+			String textoParecer, String decisaoParecer) {
 		super();
 		this.idParecer = idParecer;
+		this.numeroProcesso = numeroProcesso;
+		this.tituloProcesso = tituloProcesso;
+		this.nomeUsuario = nomeUsuario;
 		this.textoParecer = textoParecer;
 		this.decisaoParecer = decisaoParecer;
-		this.dataParecer = dataParecer;
-		this.usuarioParecer = usuarioParecer;
-		this.processoParecer = processoParecer;
 	}
 
 
@@ -46,6 +46,36 @@ public class ParecerListDTO implements Serializable {
 
 	public void setIdParecer(Integer idParecer) {
 		this.idParecer = idParecer;
+	}
+
+
+	public String getNumeroProcesso() {
+		return numeroProcesso;
+	}
+
+
+	public void setNumeroProcesso(String numeroProcesso) {
+		this.numeroProcesso = numeroProcesso;
+	}
+
+
+	public String getTituloProcesso() {
+		return tituloProcesso;
+	}
+
+
+	public void setTituloProcesso(String tituloProcesso) {
+		this.tituloProcesso = tituloProcesso;
+	}
+
+
+	public String getNomeUsuario() {
+		return nomeUsuario;
+	}
+
+
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nomeUsuario = nomeUsuario;
 	}
 
 
@@ -77,24 +107,5 @@ public class ParecerListDTO implements Serializable {
 	public void setDataParecer(Date dataParecer) {
 		this.dataParecer = dataParecer;
 	}
-
-
-	public Usuarios getUsuarioParecer () {
-		return usuarioParecer;
-	}
-
-
-	public void setUsuarioParecer (Usuarios usuarioParecer) {
-		this.usuarioParecer = usuarioParecer;
-	}
-
-
-	public Processos getProcessoParecer() {
-		return processoParecer;
-	}
-
-
-	public void setProcessoParecer(Processos processoParecer) {
-		this.processoParecer = processoParecer;
-	}
+	
 }

@@ -5,9 +5,11 @@
                 <mat-icon class="sidenav-icon">account_box</mat-icon> {{ 'Usuários' | translate }}
             </a>
         </ng-container>
-        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/processos']">
-            <mat-icon class="sidenav-icon">description</mat-icon> {{ 'Processos' | translate }}
-        </a>
+        <ng-container *ngIf="codPerfil === 1 || codPerfil === 2">
+            <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/processos']">
+                <mat-icon class="sidenav-icon">description</mat-icon> {{ 'Processos' | translate }}
+            </a>
+        </ng-container>
         <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/parecer']">
             <mat-icon class="sidenav-icon">description</mat-icon> {{ 'Parecer' | translate }}
         </a>

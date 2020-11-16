@@ -51,26 +51,25 @@ CREATE TABLE `db_gs_processos`.`parecer` (
 ) ENGINE = innodb;
 
 -- Inserts Iniciais
-
--- Usuários: Admin
-INSERT INTO `db_gs_processos`.`usuarios` VALUES (1, 'Softplan Admin', '16945057070', 'admin@hotmail.com','$2a$10$adlSCQhRsI6msMPsbevTMO6fJmYAmb7.oXaPANRpUBuAI9fqq2l4O','A','2020-11-14 22:04:04');
+-- Usuários: Admin -- Senha de acesso: 4N1mY33iKR ---
+INSERT INTO `db_gs_processos`.`usuarios` VALUES (1, 'Softplan Admin', '16945057070', 'admin@hotmail.com','$2a$10$xlJj6HLuAeOpfZAYFVuTqOnP7Vfn9L6JhOKTTQRs9//gkd82xrQuu','A','2020-11-14 22:04:04');
 INSERT INTO `db_gs_processos`.`perfil` VALUES (1,1);
 
--- Usários: Triadores
-INSERT INTO `db_gs_processos`.`usuarios` VALUES (2, 'Softplan Triador 1', '07676770050', 'triador_um@hotmail.com','$2a$10$adlSCQhRsI6msMPsbevTMO6fJmYAmb7.oXaPANRpUBuAI9fqq2l4O','A','2020-11-14 22:05:04');
+-- Usários: Triadores --- Senha de acesso: 4N1mY33iKR ---
+INSERT INTO `db_gs_processos`.`usuarios` VALUES (2, 'Softplan Triador 1', '07676770050', 'triador_um@hotmail.com','$2a$10$xlJj6HLuAeOpfZAYFVuTqOnP7Vfn9L6JhOKTTQRs9//gkd82xrQuu','A','2020-11-14 22:05:04');
 INSERT INTO `db_gs_processos`.`perfil` VALUES (2,2);
 
-INSERT INTO `db_gs_processos`.`usuarios` VALUES (3, 'Softplan Triador 2', '22099347026', 'triador_dois@hotmail.com','$2a$10$adlSCQhRsI6msMPsbevTMO6fJmYAmb7.oXaPANRpUBuAI9fqq2l4O','A','2020-11-14 22:06:04');
+INSERT INTO `db_gs_processos`.`usuarios` VALUES (3, 'Softplan Triador 2', '22099347026', 'triador_dois@hotmail.com','$2a$10$xlJj6HLuAeOpfZAYFVuTqOnP7Vfn9L6JhOKTTQRs9//gkd82xrQuu','A','2020-11-14 22:06:04');
 INSERT INTO `db_gs_processos`.`perfil` VALUES (2,3);
 
--- Usuários:Finalizadores
-INSERT INTO `db_gs_processos`.`usuarios` VALUES (4, 'Softplan Finalizador 1', '06202937050', 'fin_um@hotmail.com','$2a$10$adlSCQhRsI6msMPsbevTMO6fJmYAmb7.oXaPANRpUBuAI9fqq2l4O','A','2020-11-15 22:06:04');
+-- Usuários:Finalizadores --- Senha de acesso: 4N1mY33iKR ---
+INSERT INTO `db_gs_processos`.`usuarios` VALUES (4, 'Softplan Finalizador 1', '06202937050', 'fin_um@hotmail.com','$2a$10$xlJj6HLuAeOpfZAYFVuTqOnP7Vfn9L6JhOKTTQRs9//gkd82xrQuu','A','2020-11-15 22:06:04');
 INSERT INTO `db_gs_processos`.`perfil` VALUES (3,4);
 
-INSERT INTO `db_gs_processos`.`usuarios` VALUES (5, 'Softplan Finalizador 2', '89768303000', 'fin_dois@hotmail.com','$2a$10$adlSCQhRsI6msMPsbevTMO6fJmYAmb7.oXaPANRpUBuAI9fqq2l4O','A','2020-11-15 22:10:04');
+INSERT INTO `db_gs_processos`.`usuarios` VALUES (5, 'Softplan Finalizador 2', '89768303000', 'fin_dois@hotmail.com','$2a$10$xlJj6HLuAeOpfZAYFVuTqOnP7Vfn9L6JhOKTTQRs9//gkd82xrQuu','A','2020-11-15 22:10:04');
 INSERT INTO `db_gs_processos`.`perfil` VALUES (3,5);
 
-INSERT INTO `db_gs_processos`.`usuarios` VALUES (6, 'Softplan Finalizador 3', '55214369018', 'fin_tres@hotmail.com','$2a$10$adlSCQhRsI6msMPsbevTMO6fJmYAmb7.oXaPANRpUBuAI9fqq2l4O','A','2020-11-15 22:11:04');
+INSERT INTO `db_gs_processos`.`usuarios` VALUES (6, 'Softplan Finalizador 3', '55214369018', 'fin_tres@hotmail.com','$2a$10$xlJj6HLuAeOpfZAYFVuTqOnP7Vfn9L6JhOKTTQRs9//gkd82xrQuu','A','2020-11-15 22:11:04');
 INSERT INTO `db_gs_processos`.`perfil` VALUES (3,6);
 
 
@@ -82,6 +81,9 @@ INSERT INTO `db_gs_processos`.`processos` VALUES (4, '2020.04.09.54218-9', 'Aç�
 INSERT INTO `db_gs_processos`.`processos` VALUES (5, '2020.36.03.56478-2', 'Ação de Indenização - Carlos Luz', 'Ação de indenização promovido em favor de Carlos Luz',  '2020-11-12', 'A');
 
 -- Parecer 
-INSERT INTO `db_gs_processos`.`parecer` VALUES (1, null, null, '4', '1', '2020-11-14');
-INSERT INTO `db_gs_processos`.`parecer` VALUES (2, null, null, '5', '2', '2020-11-14');
-INSERT INTO `db_gs_processos`.`parecer` VALUES (3, null, null, '6', '3', '2020-11-14');
+INSERT INTO `db_gs_processos`.`parecer` VALUES (1, null, null, '1', '1', '2020-11-14');
+INSERT INTO `db_gs_processos`.`parecer` VALUES (2, null, null, '2', '2', '2020-11-14');
+INSERT INTO `db_gs_processos`.`parecer` VALUES (3, null, null, '3', '3', '2020-11-14');
+INSERT INTO `db_gs_processos`.`parecer` VALUES (4, null, null, '4', '4', '2020-11-14');
+INSERT INTO `db_gs_processos`.`parecer` VALUES (5, null, null, '5', '5', '2020-11-14');
+INSERT INTO `db_gs_processos`.`parecer` VALUES (6, null, null, '6', '1', '2020-11-14');

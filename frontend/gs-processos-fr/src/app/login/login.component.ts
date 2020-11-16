@@ -23,10 +23,12 @@ export class LoginComponent implements OnInit {
         this.authService.authenticate(this.emailUsuarios, this.senhaUsuarios).subscribe(response => {
             this.authService.successfulLogin(response.headers.get('Authorization'));
             this.usuarioService.buscarPerfilUsuarioLogado().subscribe(response => {
-                if ( response.codPerfil.toString() === '2') {
-                    this.router.navigate(['/processos']);
-                } else {
+                if ( response.codPerfil.toString() === '1' ) {
                     this.router.navigate(['/usuarios']);
+                } else if ( response.codPerfil.toString() === '2' ) {
+                    this.router.navigate(['/processos']);
+                } else if ( response.codPerfil.toString() === '3' ) {
+                    this.router.navigate(['/parecer']);
                 }
             },
             error => {});

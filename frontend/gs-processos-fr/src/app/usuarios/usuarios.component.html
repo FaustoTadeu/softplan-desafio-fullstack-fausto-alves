@@ -2,7 +2,7 @@
         <mat-tab label="Gestão de Usuários">
             <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
                 <div class="usuario" fxFlex="25%">
-                    <div class="usuarioForm" fxFlex="90%">
+                    <div class="usuarioForm" fxFlex="100%">
                         <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
                             <div fxFlex="100%">    
                                 <p>Cadastrar/Editar Usuário</p>
@@ -40,6 +40,7 @@
                                 </mat-form-field>
                             </div>
                         </div>
+                        <br />
                         <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
                             <div class="buttonSalvarUsuario" fxFlex="100%">
                                 <button mat-stroked-button color="primary" (click)="inserirEditarUsuario()">Salvar</button> &nbsp; &nbsp;
@@ -50,7 +51,7 @@
                     </div>    
                 </div>
                 <div class="usuario" fxFlex="75%">
-                    <div class="usuariosTabela" fxFlex="98%">
+                    <div class="usuariosTabela" fxFlex="100%">
                         <p>Lista de Usuários</p>
                         <br />
                         <app-table-usuarios [novoUsuario]="nvUsuario" (change)="povoarFormulario($event)"></app-table-usuarios>
@@ -58,8 +59,6 @@
                 </div>
             </div>
         </mat-tab>
-        <!-- <mat-tab label="Second">Content 2</mat-tab>
-        <mat-tab label="Third">Content 3</mat-tab> -->
     </mat-tab-group>
     
       

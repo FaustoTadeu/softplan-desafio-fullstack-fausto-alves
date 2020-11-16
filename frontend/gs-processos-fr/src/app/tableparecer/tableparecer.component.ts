@@ -76,6 +76,8 @@ export class TableParecerComponent implements OnInit {
                 textoParecer: textoParecer,
                 decisaoParecer: decisaoParecer
             }
-        });
+        }).afterClosed().subscribe( () => {
+            this.reloadPage();
+         });
        }
 }

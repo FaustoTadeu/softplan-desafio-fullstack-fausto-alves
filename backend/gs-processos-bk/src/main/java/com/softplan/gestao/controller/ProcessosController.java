@@ -15,15 +15,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.softplan.gestao.dto.PasswordDTO;
 import com.softplan.gestao.dto.ProcessoRetornoDTO;
 import com.softplan.gestao.dto.ProcessosListDTO;
 import com.softplan.gestao.dto.ProcessosNewDTO;
 import com.softplan.gestao.dto.StatusProcessoDTO;
-import com.softplan.gestao.dto.UsuariosNewDTO;
 import com.softplan.gestao.model.Processos;
-import com.softplan.gestao.model.Usuarios;
 import com.softplan.gestao.service.ProcessosService;
 
 @RestController

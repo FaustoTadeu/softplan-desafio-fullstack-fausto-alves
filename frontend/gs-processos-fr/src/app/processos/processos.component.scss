@@ -1,7 +1,7 @@
 .processo {
-    background-color:hsla(234, 100%, 62%, 0.63);
+    background-color:hsla(234, 100%, 50%, 0.75);
     text-align: center;
-    border-color: hsl(234, 100%, 60%);
+    border-color: hsl(234, 100%, 50%);
     border-style: solid;
     border-width: thin;
     border-radius: 5px;
@@ -17,7 +17,7 @@
     border-width: thin;
     border-radius: 5px;
     margin: 5%;
-    height: 410px;
+    height: 424px;
 }
 
 ::ng-deep .mat-form-field{
@@ -43,6 +43,5 @@
     border-width: thin;
     border-radius: 5px;
     margin: 2%;
-    max-height: 410px;
 }
 

@@ -15,8 +15,8 @@
         </div>
         <div class="container text-center" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
             <div class="radioButton" fxFlex="100%">
-                <mat-radio-group aria-label="Selecione uma opção">
-                    <mat-radio-button value="F">Favorável</mat-radio-button>&nbsp;&nbsp;&nbsp;
+                <mat-radio-group aria-label="Selecione uma opção" [formControl]='decisaoParecer'>
+                    <mat-radio-button value="F" >Favorável</mat-radio-button>&nbsp;&nbsp;&nbsp;
                     <mat-radio-button value="D">Desfavorável</mat-radio-button>
                   </mat-radio-group>
             </div>

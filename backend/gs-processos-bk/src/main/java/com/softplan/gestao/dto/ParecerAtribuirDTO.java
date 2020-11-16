@@ -1,11 +1,8 @@
 package com.softplan.gestao.dto;
 
 import java.io.Serializable;
-import java.util.Date;
-
 import javax.validation.constraints.NotEmpty;
-import com.softplan.gestao.model.Processos;
-import com.softplan.gestao.model.Usuarios;
+
 
 public class ParecerAtribuirDTO implements Serializable{
 

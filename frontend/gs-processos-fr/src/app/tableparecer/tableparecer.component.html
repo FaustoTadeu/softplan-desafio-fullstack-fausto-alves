@@ -35,7 +35,7 @@
                 <!-- Name Column -->
                 <ng-container matColumnDef="decisaoParecer">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Decisão </th>
-                    <td mat-cell *matCellDef="let row" (click)="visualizarParecer(row)" class="pointer"> {{ row.decisaoParecer == 'F' ? 'Favorável' :  row.decisaoParecer == 'D ' ? 'Desfavorável': 'Não Avaliado'}} </td>
+                    <td mat-cell *matCellDef="let row" (click)="visualizarParecer(row)" class="pointer"> {{ row.decisaoParecer == 'F' ? 'Favorável' :  row.decisaoParecer == 'D' ? 'Desfavorável': 'Não Avaliado'}} </td>
                 </ng-container>
                 
 
@@ -44,7 +44,7 @@
                     <th mat-header-cell *matHeaderCellDef></th>
                     <td mat-cell *matCellDef="let row" > 
                         <button mat-icon-button title="Cadastrar Parecer" color="warn" (click)="cadastrarParecer(row.idParecer, row.numeroProcesso, row.tituloProcesso, row.textoParecer, row.decisaoParecer )">
-                            <mat-icon >list_alt</mat-icon>
+                            <mat-icon color="primary" >list_alt</mat-icon>
                         </button>
                     </td>
                 </ng-container>

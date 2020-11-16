@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 import { ParecerService } from 'src/services/parecer.service';
 import { DialogOverviewComponent } from '../dialog-overview/dialog-overview.component';
 import { DialogParecerDTO } from 'src/models/dialog_parecer.dto';
-import { CadastrarParecerDTO } from 'src/models/cadastrar_parecer.dto';
+import { CadastrarParecerDTO } from 'src/models/parecer_cadastrar.dto';
 
 @Component({
     selector: 'app-dialog-parecer',
@@ -33,7 +33,6 @@ export class DialogParecerComponent implements OnInit {
         this.numeroProcesso.setValue(this.data.numeroProcesso);
         this.textoParecer.setValue(this.data.textoParecer);
         this.decisaoParecer.setValue(this.data.decisaoParecer);
-        console.log(this.tituloProcesso);
     }
 
     onNoClick(): void {
@@ -41,9 +40,9 @@ export class DialogParecerComponent implements OnInit {
     }
 
     cadastrarParecer() {
-        if (this.idParecer == null || this.idParecer === undefined ||
+        if (this.idParecer.value == null || this.idParecer.value === undefined ||
             this.textoParecer.value == null || this.textoParecer.value === undefined
-            || this.decisaoParecer == null || this.decisaoParecer === undefined ) {
+            || this.decisaoParecer.value == null || this.decisaoParecer.value === undefined ) {
                 this.openDialog('400', 'Dados Inválidos', 'Todos os campos são obrigatórios. Preencha todos.');
                 return false;
             }
@@ -51,9 +50,10 @@ export class DialogParecerComponent implements OnInit {
             cadParecer.idParecer = this.idParecer.value;
             cadParecer.textoParecer = this.textoParecer.value;
             cadParecer.decisaoParecer = this.decisaoParecer.value;
+            console.log(cadParecer.decisaoParecer);
 
             this.parecerService.cadastrarParecer(cadParecer).subscribe(response => {
-                this.dialogRef.close();
+            this.dialogRef.close();
             },
             error => {});
 

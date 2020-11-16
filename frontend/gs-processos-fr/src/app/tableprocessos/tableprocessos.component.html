@@ -37,11 +37,11 @@
                     <th mat-header-cell *matHeaderCellDef></th>
                     <td mat-cell *matCellDef="let row" > 
                         <button mat-icon-button color="warn" title="Atribuir Processo a um Usuário" (click)="atribuirUsuarioProcesso(row.idProcessos, row.numeroProcessos, row.tituloProcessos)">
-                            <mat-icon >contact_page</mat-icon>
+                            <mat-icon color="primary" >contact_page</mat-icon>
                         </button>
-                        <mat-slide-toggle title="Ativar / Inativar Processo" [checked]="row.statusProcessos == 'A'" (change)="ativaInativaProcessos(row.idProcessos, $event)"></mat-slide-toggle>
-                        <button mat-icon-button color="warn" title="Excluir Processo" (click)="apagarProcessos(row.idProcessos)">
-                            <mat-icon >delete_forever</mat-icon>
+                        <mat-slide-toggle title="Ativar / Inativar Processo" [checked]="row.statusProcessos == 'A'" (change)="ativaInativaProcessos(row.idProcessos, $event)" color="primary"></mat-slide-toggle>
+                        <button mat-icon-button color="warn" title="Excluir Processo" (click)="apagarProcessos(row.idProcessos)" [disabled]="row.atribuicoesProcessos > 0">
+                            <mat-icon color="primary" >delete_forever</mat-icon>
                         </button>
                     </td>
                 </ng-container>

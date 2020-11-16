@@ -5,6 +5,8 @@ import { UsuariosDTO } from 'src/models/usuarios.dto';
 import { StatusUsuarioDTO } from 'src/models/status_usuario.dto';
 import { EmailDTO } from 'src/models/email.dto';
 import { DialogOverviewComponent } from '../dialog-overview/dialog-overview.component';
+import { StorageService } from 'src/services/storage.service';
+import { LocalUser } from 'src/models/local_user';
 
 @Component({
     selector: 'app-table-usuarios',
@@ -20,9 +22,12 @@ export class TableUsuariosComponent implements OnInit {
     email = new EmailDTO();
     displayedColumns = ['cpfUsuarios', 'nomeUsuarios', 'emailUsuarios', 'perfil', 'atInUsuarios'];
     dataSource: MatTableDataSource<UsuariosDTO>;
+    usuarioLogado: LocalUser;
 
 
-    constructor(private usuariosService: UsuariosService, private dialog: MatDialog) { }
+    constructor(private usuariosService: UsuariosService,
+                private dialog: MatDialog,
+                private storageService: StorageService ) { }
 
     @Input()
     set novoUsuario(novoUsuario: UsuariosDTO) {
@@ -31,6 +36,7 @@ export class TableUsuariosComponent implements OnInit {
 
     @ViewChild(MatSort) sort: MatSort;
     ngOnInit() {
+        this.usuarioLogado = this.storageService.getLocalStorage();
         this.usuariosService.pesquisarListaUsuarios().subscribe(response => {
             this.dataSource = new MatTableDataSource(response);
             this.dataSource.sort = this.sort;

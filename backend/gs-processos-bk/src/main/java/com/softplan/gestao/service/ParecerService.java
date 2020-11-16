@@ -4,6 +4,7 @@ import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.softplan.gestao.dto.ParecerAtribuirDTO;
+import com.softplan.gestao.dto.ParecerCadastrarDTO;
 import com.softplan.gestao.dto.ParecerListDTO;
 import com.softplan.gestao.model.Parecer;
 import com.softplan.gestao.repository.ParecerRepository;
@@ -52,6 +53,12 @@ public class ParecerService {
         Parecer parecer = new Parecer (parecerAtributoDto.getIdUsuario(), parecerAtributoDto.getIdProcesso());
         return parecer;
     }
+	
+	public Parecer fromParecerCadastroDTO (Parecer parecer, ParecerCadastrarDTO parecerCadastroDTO) {
+		parecer.setTextoParecer(parecerCadastroDTO.getTextoParecer());
+		parecer.setDecisaoParecer(parecerCadastroDTO.getDecisaoParecer());
+		return parecer;
+	}
 	
 	public List<ParecerListDTO> fromParecer (List<Parecer> parecerList) {
 		List<ParecerListDTO> listaConverted = new ArrayList<ParecerListDTO>();
